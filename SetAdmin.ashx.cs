@@ -17,7 +17,38 @@ namespace WebApplication2
 
         public void ProcessRequest(HttpContext context)
         {
-            Query(context);
+            context.Response.ContentType = "text/plain";
+            string operation, firstname;
+            if (!string.IsNullOrEmpty(context.Request.QueryString["test"]))
+            {
+                operation = context.Request.QueryString["test"].ToString();
+                switch (operation)
+                {
+                    case "add":
+                        
+                        //        url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&message" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
+                      //  if (null != context.Request.QueryString["test"])
+                        if (!string.IsNullOrEmpty(context.Request.QueryString["firstname"]))
+                        {
+                            firstname = context.Request.QueryString["firstname"].ToString();
+                        }
+                          context.Response.Write("T");//返回给前台页面  
+          //  context.Response.End();
+                       // Query(context);
+                        break;
+                    case "edit":
+                        break;
+                    default:
+                        Query(context);
+                        break;
+                }
+            }
+            else
+            {
+                Query(context);
+            }
+          
+
         }
 
         #region 查询方法

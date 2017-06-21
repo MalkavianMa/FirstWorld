@@ -113,44 +113,47 @@
         var workerID = $("#workerName").combobox("getValue");
         var adminRightID = $("#adminRightName").combobox("getValue");
         var message = document.getElementById("message").value;
-                             alert('恭喜您，信息添加成功！')  
+        alert('恭喜您，信息添加成功！');
+        
 
         var test = document.getElementById("test").value;
-if (test == "add") {  
-         $("#fm").form("submit", {  
-             url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID +"&adminRightID="+adminRightID+"&message"+message, // "&adminRightID=" + adminRightID + "&message=" + message,  
-             onSubmit: function () {  
-                 return $(this).form('validate');  
-             },  
-             success: function (result) {  
-                 if (result.indexOf("T") == 0) {  
-                     $('#dlg').dialog('close');  
-                     $.messager.alert("提示", "恭喜您，信息添加成功", "info");  
-                     //alert('恭喜您，信息添加成功！')  
-                     // close the dialog  
-                     $('#tt').datagrid('reload');  
-                     //$('#fm').form('submit');  
-  
-                 }  
-                 else {  
-                     $.messager.alert("提示", "添加失败，请重新操作！", "info");  
-                     return;  
-                     //alert('添加失败，请重新操作！')  
-                 }  
-  
-                 //var result = eval('(' + result + ')');  
-  
-                 //if (result.success) {  
-                 //    $('#dlg').dialog('close');       // close the dialog  
-                 //    $('#tt').datagrid('reload'); // reload the user data  
-                 //} else {  
-                 //    $.messager.show({  
-                 //        title: 'Error',  
-                 //        msg: result.msg  
-                 //    });  
-                 //}  
-             }  
-         });  
+if (test == "add") {
+    $("#fm").form("submit", {
+        url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&message" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
+        onSubmit: function () {
+            return $(this).form('validate');
+        },
+        success: function (result) {
+            // result = "T"; indexOf找到返回0,找不到返回-1
+            if (result.indexOf("T") == 0) {
+                $('#dlg').dialog('close');
+                $.messager.alert("提示", "恭喜您，信息添加成功", "info");
+                //alert('恭喜您，信息添加成功！')  
+                // close the dialog  
+                $('#tt').datagrid('reload');
+                //$('#fm').form('submit');  
+
+            }
+            else {
+                alert(result);
+                $.messager.alert("提示", "添加失败，请重新操作！", "info");
+                return;
+                //alert('添加失败，请重新操作！')  
+            }
+
+            //var result = eval('(' + result + ')');  
+
+            //if (result.success) {  
+            //    $('#dlg').dialog('close');       // close the dialog  
+            //    $('#tt').datagrid('reload'); // reload the user data  
+            //} else {  
+            //    $.messager.show({  
+            //        title: 'Error',  
+            //        msg: result.msg  
+            //    });  
+            //}  
+        }
+    });  
   
      }
 
