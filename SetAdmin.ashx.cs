@@ -5,6 +5,7 @@ using System.Web;
 using System.Text;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace WebApplication2
 {
@@ -18,23 +19,103 @@ namespace WebApplication2
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            string operation, firstname;
+            string operation, firstname, password, workerID, adminRightID,adminID;
             if (!string.IsNullOrEmpty(context.Request.QueryString["test"]))
             {
                 operation = context.Request.QueryString["test"].ToString();
                 switch (operation)
                 {
                     case "add":
-                        
-                        //        url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&message" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
-                      //  if (null != context.Request.QueryString["test"])
-                        if (!string.IsNullOrEmpty(context.Request.QueryString["firstname"]))
+                        adminID = context.Request.QueryString["adminID"].ToString();
+                        firstname = context.Request.QueryString["firstname"].ToString();
+                        password = context.Request.QueryString["password"].ToString();
+                        workerID = context.Request.QueryString["workerID"].ToString();
+                        adminRightID = context.Request.QueryString["adminRightID"].ToString();
+                        if (!string.IsNullOrEmpty(firstname)&&!string.IsNullOrEmpty(password)&&!string.IsNullOrEmpty(workerID)&&!string.IsNullOrEmpty(adminRightID))//AdminName
                         {
-                            firstname = context.Request.QueryString["firstname"].ToString();
+
+                            StringBuilder sql = new StringBuilder();
+                            sql.Append("insert into V_admin_MgPersonFiles (");
+                            sql.Append("[AdminName],[AdminPassword],[AdminRightName],[WorkerRealName])");
+                            sql.Append("values (");
+                            sql.Append("@AdminName,@AdminPassword,@AdminRightName,@WorkerRealName)");
+
+                            SqlParameter[] para = new SqlParameter[]
+                        {
+                            new SqlParameter("@AdminName",firstname),
+                            new SqlParameter("@AdminPassword",password),
+                            new SqlParameter("@AdminRightName",adminRightID),
+                              new SqlParameter("@WorkerRealName",workerID),
+
+                        };
+
+                            int count = SqlHelper.ExecuteNonQuery(Connstr, CommandType.Text, sql.ToString(), para);
+                            if (count > 0)
+                            {
+                                context.Response.Write("T");//返回给前台页面  
+                            }
                         }
-                          context.Response.Write("T");//返回给前台页面  
-          //  context.Response.End();
-                       // Query(context);
+
+
+                        //        url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&message" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
+                        //  if (null != context.Request.QueryString["test"])
+                        //if (!string.IsNullOrEmpty(context.Request.QueryString["firstname"]))//AdminName
+                        //{
+                        //    firstname = context.Request.QueryString["firstname"].ToString();
+                        //}
+                        //if (!string.IsNullOrEmpty(context.Request.QueryString["password"]))//password
+                        //{
+                        //    password = context.Request.QueryString["password"].ToString();
+                        //}
+                        //if (!string.IsNullOrEmpty(context.Request.QueryString["workerID"]))//WorkerRealName
+                        //{
+                        //    workerID = context.Request.QueryString["workerID"].ToString();
+                        //}
+                        //if (!string.IsNullOrEmpty(context.Request.QueryString["adminRightID"]))//AdminRightName
+                        //{
+                        //    adminRightID = context.Request.QueryString["adminRightID"].ToString();
+                        //}
+                        //     AddUser();
+                     
+                        //  context.Response.End();
+                        // Query(context);
+                        break;
+                    case    "modify":
+                        adminID = context.Request.QueryString["adminID"].ToString();
+                         firstname = context.Request.QueryString["firstname"].ToString();
+                        password = context.Request.QueryString["password"].ToString();
+                        workerID = context.Request.QueryString["workerID"].ToString();
+                        adminRightID = context.Request.QueryString["adminRightID"].ToString();
+                        if (!string.IsNullOrEmpty(firstname) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(workerID) && !string.IsNullOrEmpty(adminRightID))//AdminName
+                        {
+                            StringBuilder sql = new StringBuilder();
+                                sql.Append("UPDATE  V_admin_MgPersonFiles  (");
+                                sql.Append("SET ");
+                                sql.Append(" AdminName=@AdminName");
+                                sql.Append(" AdminPassword=@AdminPassword");
+                                sql.Append(" AdminRightName=@AdminRightName");
+                                sql.Append(" WorkerRealName=@WorkerRealName");
+
+                        //    sql.Append("[AdminName],[AdminPassword],[AdminRightName],[WorkerRealName])");
+                        //    sql.Append("values (");
+                        //    sql.Append("@AdminName,@AdminPassword,@AdminRightName,@WorkerRealName)");
+
+                                SqlParameter[] para = new SqlParameter[]
+                        {
+                            new SqlParameter("@AdminName",firstname),
+                            new SqlParameter("@AdminPassword",password),
+                            new SqlParameter("@AdminRightName",adminRightID),
+                              new SqlParameter("@WorkerRealName",workerID),
+
+                        };
+
+                          int count = SqlHelper.ExecuteNonQuery(Connstr, CommandType.Text, sql.ToString(), para);
+                          if (count > 0)
+                          {
+                              context.Response.Write("T");//返回给前台页面  
+                          }
+
+                        }
                         break;
                     case "edit":
                         break;
@@ -47,7 +128,7 @@ namespace WebApplication2
             {
                 Query(context);
             }
-          
+
 
         }
 
@@ -63,10 +144,10 @@ namespace WebApplication2
             //string a = @"<script  type=" + "\"text/javascript\"" + @">alert(2)</script>";
             //===============================================================  
             //获取查询条件:【用户id,开始时间，结束时间，关键字】  
-            string UserName, startTime, endTime, QuanXian,test;
-            UserName = startTime = endTime = QuanXian = test="";
+            string UserName, startTime, endTime, QuanXian, test;
+            UserName = startTime = endTime = QuanXian = test = "";
 
-          //  if (!string.IsNullOrEmpty(context.Request.QueryString["test"]))
+            //  if (!string.IsNullOrEmpty(context.Request.QueryString["test"]))
             if (null != context.Request.QueryString["test"])
             {
                 test = context.Request.QueryString["test"].ToString();
@@ -164,15 +245,15 @@ namespace WebApplication2
         }
         #endregion
         string _Connstr;
-/// <summary>
-/// 数据库连接字段,SqlHelper类里也有,多写了一个连接字段需要优化
-/// </summary>
+        /// <summary>
+        /// 数据库连接字段,SqlHelper类里也有,多写了一个连接字段需要优化
+        /// </summary>
         public string Connstr
         {
             get
             {
                 return "Data Source=.;Initial Catalog=GreenGrocer;Integrated Security=true;";
-               // return ConfigurationManager.ConnectionStrings["BookShopconnStr"].ToString();
+                // return ConfigurationManager.ConnectionStrings["BookShopconnStr"].ToString();
             }
             set { _Connstr = value; }
         }
@@ -211,13 +292,13 @@ namespace WebApplication2
 
             return SqlHelper.ExecuteDataSet(Connstr, strSql.ToString(), null);
             // throw new NotImplementedException();
-        } 
-      
-     /// <summary>
+        }
+
+        /// <summary>
         /// 获取记录总数 
-     /// </summary>
-     /// <param name="strWhere">查询过滤条件字段</param>
-     /// <returns></returns>
+        /// </summary>
+        /// <param name="strWhere">查询过滤条件字段</param>
+        /// <returns></returns>
         public int GetRecordCount(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
