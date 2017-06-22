@@ -86,7 +86,7 @@
         $.getJSON(queryWorkerName, function (json) {
             $('#workerName').combobox({
                 data: json.rows,
-                valueField: 'AdminID', //WorkerID
+                valueField: 'WorkerRealName', //WorkerID
                 textField: 'WorkerRealName',
                 required: 'true',
                 editable: 'false'
@@ -97,7 +97,7 @@
         $.getJSON(queryRightName, function (json) {
             $('#adminRightName').combobox({
                 data: json.rows,
-                valueField: 'AdminID', //AdminRightID
+                valueField: 'AdminRightName', //AdminRightID
                 textField: 'AdminRightName',
                 required: 'true',
                 panelHeight: 'auto'
@@ -113,53 +113,100 @@
         var workerID = $("#workerName").combobox("getValue");
         var adminRightID = $("#adminRightName").combobox("getValue");
         var message = document.getElementById("message").value;
-        alert('恭喜您，信息添加成功！');
-        
+        var adminID = document.getElementById("AdminID").value;
+        alert(adminID);
+
 
         var test = document.getElementById("test").value;
-if (test == "add") {
-    $("#fm").form("submit", {
-        url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&message" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
-        onSubmit: function () {
-            return $(this).form('validate');
-        },
-        success: function (result) {
-            // result = "T"; indexOf找到返回0,找不到返回-1
-            if (result.indexOf("T") == 0) {
-                $('#dlg').dialog('close');
-                $.messager.alert("提示", "恭喜您，信息添加成功", "info");
-                //alert('恭喜您，信息添加成功！')  
-                // close the dialog  
-                $('#tt').datagrid('reload');
-                //$('#fm').form('submit');  
+        alert(test);
 
+        if (test == "add") {
+            $("#fm").form("submit", {
+                url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&adminID=" + adminID + "&message=" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (result) {
+                    // result = "T"; indexOf找到返回0,找不到返回-1
+                    if (result.indexOf("T") == 0) {
+                        $('#dlg').dialog('close');
+                        $.messager.alert("提示", "恭喜您，信息添加成功", "info");
+                        //alert('恭喜您，信息添加成功！')  
+                        // close the dialog  
+                        $('#tt').datagrid('reload');
+                        //$('#fm').form('submit');  
+
+                    }
+                    else {
+                        alert(result);
+                        $.messager.alert("提示", "添加失败，请重新操作！", "info");
+                        return;
+                        //alert('添加失败，请重新操作！')  
+                    }
+
+                    //var result = eval('(' + result + ')');  
+
+                    //if (result.success) {  
+                    //    $('#dlg').dialog('close');       // close the dialog  
+                    //    $('#tt').datagrid('reload'); // reload the user data  
+                    //} else {  
+                    //    $.messager.show({  
+                    //        title: 'Error',  
+                    //        msg: result.msg  
+                    //    });  
+                    //}  
+                }
+            });
+
+        } else {
+            var row = $('#tt').datagrid('getSelected');
+            if (row) {
+                //获取要修改的字段  
+                var adminID = row.AdminID;
             }
-            else {
-                alert(result);
-                $.messager.alert("提示", "添加失败，请重新操作！", "info");
-                return;
-                //alert('添加失败，请重新操作！')  
-            }
+            $('#fm').form('submit', {
+                url: "SetAdmin.ashx?test=" + test + "&firstname=" + firstname + "&password=" + password + "&workerID=" + workerID + "&adminRightID=" + adminRightID + "&adminID=" + adminID + "&message=" + message, // "&adminRightID=" + adminRightID + "&message=" + message,  
+                //  url: "SetAdmin.ashx?test=" + test + "&adminID=" + adminID + "&firstname=" + firstname + "&password=" + password + "&workerID=" +  ID + "&adminRightID=" + adminRightID + "&message=" + message,  
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (result) {
+                    if (result.indexOf("T") == 0) {
+                        $('#dlg').dialog('close');
+                        $('#tt').datagrid('clearSelections'); //清空选中的行  
+                        $.messager.alert("提示", "恭喜您，信息修改成功", "info");
+                        //alert('恭喜您，信息添加成功！')  
+                        // close the dialog  
+                        $('#tt').datagrid('reload');
+                        $('#fm').form('submit');
 
-            //var result = eval('(' + result + ')');  
+                    }
+                    else {
+                        alert("xiu");
+                        $.messager.alert("提示", "修改失败，请重新操作！", "info");
 
-            //if (result.success) {  
-            //    $('#dlg').dialog('close');       // close the dialog  
-            //    $('#tt').datagrid('reload'); // reload the user data  
-            //} else {  
-            //    $.messager.show({  
-            //        title: 'Error',  
-            //        msg: result.msg  
-            //    });  
-            //}  
+                        return;
+                        //alert('添加失败，请重新操作！')  
+                    }
+
+                    //var result = eval('(' + result + ')');  
+
+                    //if (result.success) {  
+                    //    $('#dlg').dialog('close');       // close the dialog  
+                    //    $('#tt').datagrid('reload'); // reload the user data  
+                    //} else {  
+                    //    $.messager.show({  
+                    //        title: 'Error',  
+                    //        msg: result.msg  
+                    //    });  
+                    //}  
+                }
+            });
         }
-    });  
-  
-     }
+    }  
 
 
-    }
-
+ 
    
 
    
@@ -173,6 +220,7 @@ if (test == "add") {
         <%-- 表格标题--%>
         <thead>
             <tr>
+                <th data-options="field:'Row',width:100">行号</th>
                 <th data-options="field:'AdminID',checkbox:true">
                 </th>
                 <th data-options="field:'AdminName',width:100">
@@ -182,6 +230,7 @@ if (test == "add") {
                     密码
                 </th>
                 <th data-options="field:'WorkerRealName',width:60">
+                    <!--field对应数据库字段名-->
                     姓名
                 </th>
                 <th data-options="field:'AdminRightName',width:120,align:'right'">
@@ -250,6 +299,11 @@ if (test == "add") {
             <label>
                 权限:</label>
             <input id="adminRightName" name="adminRightName" class="easyui-combobox" />
+        </div>
+        <div class="fitem">
+            <label>
+                添加时间</label>
+            <input id="AddTime" class="easyui-datebox" style="width: 100px" />
         </div>
         <div class="fitem">
             <label>
