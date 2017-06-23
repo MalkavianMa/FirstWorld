@@ -20,6 +20,7 @@ namespace WebApplication2
         {
             context.Response.ContentType = "text/plain";
             string operation, firstname, password, workerID, adminRightID,adminID;
+            operation=firstname=password= workerID= adminRightID=adminID="";
             if (!string.IsNullOrEmpty(context.Request.QueryString["test"]))
             {
                 operation = context.Request.QueryString["test"].ToString();
@@ -86,16 +87,16 @@ namespace WebApplication2
                         password = context.Request.QueryString["password"].ToString();
                         workerID = context.Request.QueryString["workerID"].ToString();
                         adminRightID = context.Request.QueryString["adminRightID"].ToString();
-                        if (!string.IsNullOrEmpty(firstname) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(workerID) && !string.IsNullOrEmpty(adminRightID))//AdminName
+                        if (!string.IsNullOrEmpty(adminID)&&!string.IsNullOrEmpty(firstname) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(workerID) && !string.IsNullOrEmpty(adminRightID))//AdminName
                         {
                             StringBuilder sql = new StringBuilder();
-                                sql.Append("UPDATE  V_admin_MgPersonFiles  (");
+                                sql.Append("UPDATE  V_admin_MgPersonFiles  ");
                                 sql.Append("SET ");
-                                sql.Append(" AdminName=@AdminName");
-                                sql.Append(" AdminPassword=@AdminPassword");
-                                sql.Append(" AdminRightName=@AdminRightName");
+                                sql.Append(" AdminName=@AdminName,");
+                                sql.Append(" AdminPassword=@AdminPassword,");
+                                sql.Append(" AdminRightName=@AdminRightName,");
                                 sql.Append(" WorkerRealName=@WorkerRealName");
-
+                                sql.Append("  where  AdminID=@AdminID");
                         //    sql.Append("[AdminName],[AdminPassword],[AdminRightName],[WorkerRealName])");
                         //    sql.Append("values (");
                         //    sql.Append("@AdminName,@AdminPassword,@AdminRightName,@WorkerRealName)");
@@ -106,13 +107,16 @@ namespace WebApplication2
                             new SqlParameter("@AdminPassword",password),
                             new SqlParameter("@AdminRightName",adminRightID),
                               new SqlParameter("@WorkerRealName",workerID),
-
+                              new  SqlParameter("@AdminID",adminID),
                         };
 
                           int count = SqlHelper.ExecuteNonQuery(Connstr, CommandType.Text, sql.ToString(), para);
                           if (count > 0)
                           {
+                              operation = firstname = password = workerID = adminRightID = adminID = "";
+
                               context.Response.Write("T");//返回给前台页面  
+
                           }
 
                         }

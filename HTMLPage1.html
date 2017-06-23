@@ -57,18 +57,35 @@
         if (row == null) {
             $.messager.alert("提示", "请选择要修改的行！", "info");
         }
-
+       myfunction();
         //加载工作人员的姓名和权限  
-        loadWorkerNameAndRightName()
+         //  loadWorkerNameAndRightName()
         if (row) {
 
             //获取要修改的字段  
             $('#firstname').val(row.AdminName);
             $('#password').val(row.AdminPassword);
-            //$('#adminRightName').val(row.AdminRightName);  
+            //            $('#adminRightName').val(row.AdminRightName)
+            //            $('#adminRightName').combobox('getValue', row.AdminRightName);
+            //            $('#adminRightName').combobox('setValue', row.AdminRightName);  
+            //             $('#workerName').combobox('getValue', row.WorkerRealName);  
+
+            //  $("#workerName").combobox(row.WorkerRealName);
+            //  $("#adminRightName").val(row.AdminRightName);
+            // alert($('#workerName').val(row.WorkerRealName));
+            //            alert( $('#adminRightName').val(row.AdminRightName));
+            // eval($('#adminRightName').combobox('getValue', row.AdminRightName));
+            // eval($('#adminRightName').combobox('setValue', row.AdminRightName));
             //$('#adminRightName').combobox('setValue', row.AdminRightName);  
-            ////$('#workerName').val(row.WorkerRealName);  
-            //$('#workerName').combobox('setValue', row.WorkerRealName);  
+            // $('#workerName').combobox('setValue', row.WorkerRealName); 
+            $('#workerName').combobox('select', row.WorkerRealName);
+          //  alert($('#workerName').combobox('setText', row.WorkerRealName));
+            $('#adminRightName').combobox('select', row.AdminRightName);
+           // alert($('#adminRightName').combobox('select', row.AdminRightName));
+            //            $('#adminRightName').combobox('getValue', row.AdminRightName);
+            //       $('#adminRightName').combobox('setValue', row.AdminRightName);
+              //   AdaptiveDemandEditor();
+           // reloadEdit();
             $('#message').val(row.AdminState)
             $('#dlg').dialog('open').dialog('setTitle', '修改管理员');
             document.getElementById("test").value = "modify";
@@ -76,6 +93,83 @@
 
         }
     }
+
+    function myfunction() {
+        var queryWorkerName = "SetAdmin.ashx?test=queryWorkerName";
+        $.getJSON(queryWorkerName, function (json) {
+            $('#workerName').combobox({
+                data: json.rows,
+                valueField: 'AdminID', //WorkerID
+                textField: 'WorkerRealName',
+                required: 'true',
+                editable: 'false'
+            });
+        })
+
+        var queryRightName = "SetAdmin.ashx?test=queryRightName";
+        $.getJSON(queryRightName, function (json) {
+            $('#adminRightName').combobox({
+                data: json.rows,
+                valueField: 'AdminID', //AdminRightID
+                textField: 'AdminRightName',
+                required: 'true',
+                panelHeight: 'auto'
+            });
+        })
+    }
+
+
+    function AdaptiveDemandEditor() {
+        var queryWorkerName = "SetAdmin.ashx?test=queryWorkerName";
+        $.getJSON(queryWorkerName, function (json) {
+            $('#workerName').combobox({
+                data: json.rows,
+                valueField: 'AdminID', //WorkerID
+                textField: 'WorkerRealName',
+                required: 'true',
+                editable: 'false',
+                onLoadSuccess: function () { //加载完成后,设置选中第一项
+                    var val = $(this).combobox("getData");
+                    for (var item in val[0]) {
+                        if (item == "AdminID") {
+                            $(this).combobox("select", val[0][item]);
+                        }
+                    }
+                }
+            });
+        })
+        //        $.ajax({
+        //            url: "${ctx}/carpark-type/combobox.json",
+        //            type: "post",
+        //            datatype: "json",
+        //            success: function (data) {
+        //                $('#cc').combobox({
+        //                    data: data.rows,
+        //                    valueField: 'id',
+        //                    textField: 'text',
+        //                    onLoadSuccess: function () { //加载完成后,设置选中第一项
+        //                        var val = $(this).combobox("getData");
+        //                        for (var item in val[0]) {
+        //                            if (item == "id") {
+        //                                $(this).combobox("select", val[0][item]);
+        //                            }
+        //                        }
+        //                    }
+        //                });
+        //            }
+        //        });
+        var queryRightName = "SetAdmin.ashx?test=queryRightName";
+        $.getJSON(queryRightName, function (json) {
+            $('#adminRightName').combobox({
+                data: json.rows,
+                valueField: 'AdminID', //AdminRightID
+                textField: 'AdminRightName',
+                required: 'true',
+                panelHeight: 'auto'
+            });
+        })
+    }
+
 
 
     //加载工作人员的姓名和权限  
@@ -178,7 +272,7 @@
                         //alert('恭喜您，信息添加成功！')  
                         // close the dialog  
                         $('#tt').datagrid('reload');
-                        $('#fm').form('submit');
+                        //$('#fm').form('submit');
 
                     }
                     else {
@@ -220,7 +314,9 @@
         <%-- 表格标题--%>
         <thead>
             <tr>
-                <th data-options="field:'Row',width:100">行号</th>
+                <th data-options="field:'Row',width:100">
+                    行号
+                </th>
                 <th data-options="field:'AdminID',checkbox:true">
                 </th>
                 <th data-options="field:'AdminName',width:100">
