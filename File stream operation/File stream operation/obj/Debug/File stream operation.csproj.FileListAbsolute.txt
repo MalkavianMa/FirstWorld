@@ -1,0 +1,10 @@
+E:\originalJs\File stream operation\File stream operation\bin\Debug\File stream operation.exe.config
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\bin\Debug\File stream operation.exe.config
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\bin\Debug\File stream operation.exe
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\bin\Debug\File stream operation.pdb
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File_stream_operation.Form1.resources
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File_stream_operation.Properties.Resources.resources
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File stream operation.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File stream operation.exe
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File stream operation.pdb
+C:\Users\dell\Desktop\File stream operation\File stream operation\File stream operation\obj\Debug\File stream operation.csprojResolveAssemblyReference.cache
