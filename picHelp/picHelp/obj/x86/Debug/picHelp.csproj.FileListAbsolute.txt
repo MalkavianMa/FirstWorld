@@ -1,0 +1,8 @@
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.Form1.resources
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.Properties.Resources.resources
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.csproj.GenerateResource.Cache
+F:\testXiangmu\picHelp\picHelp\bin\Debug\picHelp.exe
+F:\testXiangmu\picHelp\picHelp\bin\Debug\picHelp.pdb
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.exe
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.pdb
+F:\testXiangmu\picHelp\picHelp\obj\x86\Debug\picHelp.csprojResolveAssemblyReference.cache
