@@ -16,3 +16,16 @@ D:\AMyLearn\ReceiveADO\ADO.NETDemo\RandomDemo\RandomDemo\obj\Debug\RandomDemo.cs
 D:\AMyLearn\ReceiveADO\ADO.NETDemo\RandomDemo\RandomDemo\obj\Debug\RandomDemo.Form1.resources
 D:\AMyLearn\ReceiveADO\ADO.NETDemo\RandomDemo\RandomDemo\obj\Debug\RandomDemo.Properties.Resources.resources
 D:\AMyLearn\ReceiveADO\ADO.NETDemo\RandomDemo\RandomDemo\obj\Debug\RandomDemo.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\bin\Debug\RandomDemo.exe.config
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.exe
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.pdb
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\bin\Debug\RandomDemo.exe
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\bin\Debug\RandomDemo.pdb
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.Properties.Resources.resources
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.csproj.GenerateResource.Cache
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.frmMain.resources
+C:\Users\dell\Desktop\RandomDemo\RandomDemo\obj\Debug\RandomDemo.frmMessage.resources
+C:\Users\dell\Documents\GitHub\FirstWorld\RandomDemo\RandomDemo\bin\Debug\RandomDemo.exe.config
+C:\Users\dell\Documents\GitHub\FirstWorld\RandomDemo\RandomDemo\obj\Debug\RandomDemo.exe
+C:\Users\dell\Documents\GitHub\FirstWorld\RandomDemo\RandomDemo\obj\Debug\RandomDemo.pdb
