@@ -1,0 +1,4 @@
+C:\Users\dell\Desktop\InheritDemo\InheritDemo\bin\Debug\InheritDemo.exe
+C:\Users\dell\Desktop\InheritDemo\InheritDemo\bin\Debug\InheritDemo.pdb
+C:\Users\dell\Desktop\InheritDemo\InheritDemo\obj\x86\Debug\InheritDemo.exe
+C:\Users\dell\Desktop\InheritDemo\InheritDemo\obj\x86\Debug\InheritDemo.pdb

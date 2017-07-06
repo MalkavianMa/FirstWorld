@@ -1,0 +1,4 @@
+C:\Users\dell\Desktop\InheritDemo\BookExampleDemo\bin\Debug\BookExampleDemo.exe
+C:\Users\dell\Desktop\InheritDemo\BookExampleDemo\bin\Debug\BookExampleDemo.pdb
+C:\Users\dell\Desktop\InheritDemo\BookExampleDemo\obj\x86\Debug\BookExampleDemo.exe
+C:\Users\dell\Desktop\InheritDemo\BookExampleDemo\obj\x86\Debug\BookExampleDemo.pdb
