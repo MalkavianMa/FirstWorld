@@ -2,3 +2,4 @@ C:\Users\dell\Desktop\EntrustDemon\EntrustDemon\bin\Debug\EntrustDemon.exe
 C:\Users\dell\Desktop\EntrustDemon\EntrustDemon\bin\Debug\EntrustDemon.pdb
 C:\Users\dell\Desktop\EntrustDemon\EntrustDemon\obj\x86\Debug\EntrustDemon.exe
 C:\Users\dell\Desktop\EntrustDemon\EntrustDemon\obj\x86\Debug\EntrustDemon.pdb
+C:\Users\dell\Desktop\EntrustDemon\EntrustDemon\obj\x86\Debug\EntrustDemon.csprojResolveAssemblyReference.cache
