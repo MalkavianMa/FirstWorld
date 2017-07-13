@@ -47,6 +47,23 @@ namespace EntrustDemon
             //调用JiSuanCallBack方法,并把前面定义的Jisuan委托的实例js传递给该方法
          sl.Cb=   sl.JiSuanCallBack(9, 9, js);
 
+         JiSuanClass jsc = new JiSuanClass();
+         Jisuan js1 = jsc.He;
+         Jisuan js2 = jsc.Shang;
+         Jisuan js3 = sl.multiplication;
+//调用委托时,,它可以调用多个方法,,,这称为多路广播..若要向委托的方法列表(调用列表)中添加额外的方法
+//只需要使用加法运算符或加法赋值运算符("+"或"+=")添加委托..eg:
+         Jisuan jsa = js1 + js2;
+         jsa += js3;
+            //此时,jsa在调用列表中包含三个方法:multiplication,He,Shang,,原来的三个委托js1,js2,js3保持不变..调用jsa时
+            //,,将按顺序调用所有这三个方法..如果委托使用引用参数,,则引用将依次传递给三个方法中的每个方法..
+            //由一个方法引起的更改对下一个方法是可见的..如果任一方法引发了异常,,而在该方法内未捕获异常,,
+            //则该异常将传递给委托的调用方,,并且不再对调用列表中后面的方法进行调用..如果委托具有返回值/或输出参数,它将
+            //返回最后调用的方法的返回值和参数..若要从调用列表中移除方法,,请使用减法运算符或减法赋值运算符("-","-=")./eg:
+
+         jsa -= js1;
+         Jisuan js4;
+         js4 = jsa - js2;
         }
         //委托类型派生字.NET Framework中的Delegate类..委托类型是密封的,,不能从Delegate中派生委托类型,,也不可能从中派生自定义类.
         //由于实例化委托是一个对象,,所以可以将其作为参数进行传递,也可以将其赋值给属性.
@@ -66,14 +83,15 @@ namespace EntrustDemon
     }
     public class JiSuanClass
     {
-        public int He(int one, int two)
+        public int He(int one, int two)//求两个整数的和
         {
             return one + two;
         }
-        public int Shang(int one, int two)
+        public int Shang(int one, int two)//求两个整数的商
         {
             return one / two;
-        }
+        }//类JiSuanClass 定义了两个方法,,加上前面定义方法multiplication,,可以把这三个方法都按前面委托的实例进
+        //行封装,,代码如下:50行
 
     }
 }
