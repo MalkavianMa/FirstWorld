@@ -1,0 +1,4 @@
+C:\Users\dell\Desktop\EventDemon\EventDemon\bin\Debug\EventDemon.exe
+C:\Users\dell\Desktop\EventDemon\EventDemon\bin\Debug\EventDemon.pdb
+C:\Users\dell\Desktop\EventDemon\EventDemon\obj\x86\Debug\EventDemon.exe
+C:\Users\dell\Desktop\EventDemon\EventDemon\obj\x86\Debug\EventDemon.pdb
