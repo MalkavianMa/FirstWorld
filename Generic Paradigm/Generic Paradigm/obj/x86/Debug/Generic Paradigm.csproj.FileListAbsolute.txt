@@ -1,0 +1,4 @@
+C:\Users\dell\Desktop\Generic Paradigm\Generic Paradigm\bin\Debug\Generic Paradigm.exe
+C:\Users\dell\Desktop\Generic Paradigm\Generic Paradigm\bin\Debug\Generic Paradigm.pdb
+C:\Users\dell\Desktop\Generic Paradigm\Generic Paradigm\obj\x86\Debug\Generic Paradigm.exe
+C:\Users\dell\Desktop\Generic Paradigm\Generic Paradigm\obj\x86\Debug\Generic Paradigm.pdb
