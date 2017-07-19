@@ -1,0 +1,4 @@
+C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.exe
+C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.pdb
+C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.exe
+C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.pdb
