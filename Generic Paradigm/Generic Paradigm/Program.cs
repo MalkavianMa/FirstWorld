@@ -79,7 +79,7 @@ namespace Generic_Paradigm
 
             //本实例使用泛型类Stack实现员工管理系统中录入员工信息的功能
             //在控制台根据提示输入员工的工号、姓名年龄和地址，确认录入信息后..显示该员工的信息
-            Stack<Employee> emp1 = new Stack<Employee>();
+            Stack<Employee> emp1 = new Stack<Employee>();//23
             do
             {
                 Console.WriteLine("请输入员工的工号");
@@ -98,10 +98,10 @@ namespace Generic_Paradigm
             Employee a = new Employee();
             a.print(emp1);
 
-            Console.Read();
+            Console.Read();//40
         }
     }
-    public class Employee
+    public class Employee//1
     {
         private int id;
         private String name;
@@ -130,6 +130,15 @@ namespace Generic_Paradigm
 
             }
 
-        }
-    }
+        }//12
+    }//代码说明:第1-12行自定义封装了员工类..其中,,第2-5行定义了4个私有字段表示员工的工号
+    //、姓名、年龄和地址。第6行定义不带参数的构造函数，第7-12行在构造函数内对四个字段进行
+    //初始化。第13-21行编写一个方法print通过foreach语句循环打印员工的信息
+      //第23行使用泛型初始化泛型集合对象emp1,,对象类型规定为我们定义的Employee类型..
+    //第25-32行获得输入的数据..第34行调用emp1对象的Push方法将员工信息添加到泛型集合
+    //中..第38行调用Employee对象的print方法打印员工信息
+    
+  
+
+
 }
