@@ -2,3 +2,8 @@ C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.
 C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.pdb
 C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.exe
 C:\Users\dell\Desktop\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.pdb
+D:\Users\Administrator\Documents\GitHub\FirstWorld\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.exe
+D:\Users\Administrator\Documents\GitHub\FirstWorld\BigIntegerDemon\BigIntegerDemon\bin\Debug\BigIntegerDemon.pdb
+D:\Users\Administrator\Documents\GitHub\FirstWorld\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.csprojResolveAssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\FirstWorld\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.exe
+D:\Users\Administrator\Documents\GitHub\FirstWorld\BigIntegerDemon\BigIntegerDemon\obj\x86\Debug\BigIntegerDemon.pdb

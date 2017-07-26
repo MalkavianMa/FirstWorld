@@ -55,22 +55,23 @@ namespace BigIntegerDemon
     {
         static void Main(string[] args)
         {
-            do
+            do//2
             {
                 Console.WriteLine("请你输入数字");
                 var number = int.Parse(Console.ReadLine());
                 var value = Fibonacci(number);
-                int i=0;
-                Console.WriteLine(i++);//i=i+1;
-                Console.WriteLine(++i);//i+1=i;
+                int si = 0,   ji =0;
+
+                Console.WriteLine("计算i++等于{0}",si++);//i=i+1;
+                Console.WriteLine("计算++j等于{0}",++ji);//i+1=i;
                 Console.WriteLine(value);
                 BigInteger value1 = Fibonaccil(number);
                 Console.WriteLine(value1);
                 Console.WriteLine("是否继续录入数字?Y/N");
-            } while (Console.ReadLine().ToLower()=="y");
+            } while (Console.ReadLine().ToLower()=="y");//10
         }
 
-        private static BigInteger Fibonaccil(int x)
+        public static BigInteger Fibonaccil(int x)//12
         {
             var previewValue = new BigInteger(-1);
             var currentResult = new BigInteger(1);
@@ -80,10 +81,10 @@ namespace BigIntegerDemon
                 previewValue = currentResult;
                 currentResult = sum;
 
-            }
+            }//21
             return currentResult;
         }
-        public static int Fibonacci(int x)
+        public static int Fibonacci(int x)//22
         {
             var previousValue = -1;
             var currentResult = 1;
@@ -95,5 +96,21 @@ namespace BigIntegerDemon
             }
             return currentResult;
         }
-    }
+    }//31
+    ///第2-10行,循环接受用户的输入..
+    ///其中第5、7行分别调用计算斐波那契数
+    ///的两个方法获得普通数据类型
+    ///的数值和BigInteger类型的数值..
+    ///第12-21行定义方法方法Fibonacci和第22-23行
+    ///定义的fibonaccil方法..二者仅有一个地方有
+    ///所不同,即13、14行将方法中需要使用的前值
+    ///和现值为普通类型，而第23、24行将方法中使用
+    ///的前值和现值声明为BigInteger类型
+    ///按下“ctrl+F5"我们发现一个有趣的问题
+    ///,当输入47以下的数字时,两种数据类型的计算
+    ///结果是相同的..但是当输入47以上的数字时
+    ///,两种数据类型的计算结果却不同,其中普通类型
+    ///是错的,而BigInteger类型是正确.这就是BigInteger
+    ///存在的意义,因为当普通类型数据长度超出它
+    ///的上限后会出现错误
 }
