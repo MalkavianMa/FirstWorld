@@ -1,0 +1,16 @@
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\MyCalculator.exe.config
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\MyCalculator.exe
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\MyCalculator.pdb
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\obj\Debug\MyCalculator.exe
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\obj\Debug\MyCalculator.pdb
+d:\users\administrator\documents\visual studio 2015\Projects\MyCalculator\MyCalculator\obj\Debug\MyCalculator.csprojResolveAssemblyReference.cache
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\bin\Debug\MyCalculator.exe.config
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\obj\Debug\MyCalculator.exe
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\obj\Debug\MyCalculator.pdb
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\bin\Debug\MyCalculator.exe
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\bin\Debug\MyCalculator.pdb
+d:\Users\Administrator\Documents\Visual Studio 2015\test\MyCalculator\MyCalculator\obj\Debug\MyCalculator.csprojResolveAssemblyReference.cache
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\BLL.dll
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\DLL.dll
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\BLL.pdb
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\MyCalculator\bin\Debug\DLL.pdb

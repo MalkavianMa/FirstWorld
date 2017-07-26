@@ -1,0 +1,7 @@
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\bin\Debug\BLL.dll
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\bin\Debug\BLL.pdb
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\bin\Debug\DLL.dll
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\bin\Debug\DLL.pdb
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\obj\Debug\BLL.dll
+d:\Users\Administrator\Documents\Visual Studio 2015\Projects\MyCalculator\BLL\obj\Debug\BLL.pdb
