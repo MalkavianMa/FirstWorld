@@ -1,3 +1,234 @@
 http://blog.csdn.net/yongh701/article/details/49976251
 http://blog.csdn.net/ldj150153/article/details/62898365
 http://www.jb51.net/article/31699.htm
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace myCalculate
+{
+    class Symbol
+    {
+        private string yunsuan;
+        private int count;
+        public string Yunsuan
+        {
+            get
+            {
+                return yunsuan;
+            }
+
+            set
+            {
+                yunsuan = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+
+            set
+            {
+                count = value;
+            }
+        }
+    }
+    class Num
+    {
+        private string yunsuan;
+        private int count;
+        private decimal amount;
+
+        public string Yunsuan
+        {
+            get
+            {
+                return yunsuan;
+            }
+
+            set
+            {
+                yunsuan = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+
+            set
+            {
+                count = value;
+            }
+        }
+
+        public decimal Amount
+        {
+            get
+            {
+                return amount;
+            }
+
+            set
+            {
+                amount = value;
+            }
+        }
+    }
+    class Program
+    {
+        decimal one = 0;
+        decimal two = 0;
+
+        public decimal One
+        {
+            get
+            {
+                return one;
+            }
+
+            set
+            {
+                one = value;
+            }
+        }
+
+        public decimal Two
+        {
+            get
+            {
+                return two;
+            }
+
+            set
+            {
+                two = value;
+            }
+        }
+
+        public Program()
+        {
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("请输入");
+            Program one = new Program();
+            Symbol s = new Symbol();
+            one.One = Convert.ToDecimal(Console.ReadLine());
+
+
+
+
+            Console.WriteLine("请输入进行的运算");
+            s.Yunsuan = Console.ReadLine();
+       one.  getYunsuan(s.Yunsuan,one.one);
+
+            Console.WriteLine("请输入");
+            one.Two = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("输出");
+
+            jisuan(one.One, one.Two);
+        }
+
+        private void  getYunsuan(string _strNum , Decimal inputOne)
+        {
+
+           // decimal result;
+            int s = 0;
+            string  forWitch="";
+            char[] x = _strNum.ToCharArray();
+            for (int i = 0; i < _strNum.Length; i++)
+            {
+                if (x[i] == '+' || x[i] == '-' || x[i] == '*' || x[i] == '/' || x[i] == '%')
+                {
+                    s++;
+                    if (x[i]== '+'&&  _strNum.Length != 1)
+                    {
+                        forWitch = _strNum.Split('+')[s];
+
+                        Num n = new Num();
+                        n.Amount =Convert.ToDecimal(forWitch);
+                        Console.WriteLine(inputOne+=n.Amount);
+                        
+                        //if (s==1)
+                        //{
+                        //    forWitch = _strNum.Split('+')[i+1];
+
+                        //}
+                        //else
+                        //{
+                        //    forWitch = _strNum.Split('+')[i];
+
+                        //}
+
+                    }
+                   
+                    //if (x[i] == '+' && s < 1)
+                    //{
+                    //    return x[i];
+                    //}
+                    //else if (x[i] == '-' && s < 1)
+                    //{
+                    //    return x[i];
+
+                    //}
+                    //else if (x[i] == '*' && s < 1)
+                    //{
+                    //    return x[i];
+
+                    //}
+                    //else if (x[i] == '/' && s < 1)
+                    //{
+                    //    return x[i];
+                    //}
+                    //else if (x[i] == '%' && s < 1)
+                    //{
+                    //    return x[i];
+                    //}
+                }
+            }
+            if (s == 1 && _strNum.Length == 1)
+            {
+                //return _strNum;
+            }
+            else
+            {
+
+            }
+           // return forWitch;
+
+        }
+
+        // throw new NotImplementedException();
+
+        public int He(int one, int two)//求两个整数的和
+        {
+            return one + two;
+        }
+        public int Shang(int one, int two)//求两个整数的商
+        {
+            return one / two;
+        }
+
+        private static void jisuan(decimal one, decimal two)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void jisuan(decimal a, decimal b, string c)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
