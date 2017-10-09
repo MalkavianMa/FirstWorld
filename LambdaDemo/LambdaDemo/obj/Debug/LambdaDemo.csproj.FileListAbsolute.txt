@@ -1,0 +1,12 @@
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.exe.config
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.exe
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.pdb
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.exe
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.pdb
+C:\Users\dell\Desktop\雷电2017年9月7日102605\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.csprojResolveAssemblyReference.cache
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.exe.config
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.exe
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.pdb
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.exe
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\bin\Debug\LambdaDemo.pdb
+C:\Users\dell\Desktop\LambdaDemo\LambdaDemo\obj\Debug\LambdaDemo.csprojResolveAssemblyReference.cache
